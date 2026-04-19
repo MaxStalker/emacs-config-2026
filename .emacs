@@ -1,4 +1,5 @@
-(setq custom-file "~/.emacs.custom.el")
+
+(setq custom-file "~/work/emacs-config/.emacs.custom.el")
 (when (file-exists-p custom-file)
   (load custom-file))
 
@@ -90,6 +91,24 @@
   ;; Speed up indexing by using "fd" or "git" instead of native lisp
   (setq projectile-indexing-method 'alien))
 
+;; Multiple colors for nested parentesis
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package add-node-modules-path
+  :hook ((js-ts-mode typescript-ts-mode) . add-node-modules-path))
+
+;; Run prettier  on save
+(use-package apheleia
+  :config
+  (apheleia-global-mode +1))
+
+;; Multiple cursors
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-g" . mc/mark-next-like-this)
+	 ("C-S-g" . mc/mark-all-like-this)
+	 ("C-S-c" . mc/edit-lines)))
 
 ;; Install custom font
 (add-to-list 'default-frame-alist `(font . "Iosevka-18"))
