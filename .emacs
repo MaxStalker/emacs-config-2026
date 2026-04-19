@@ -117,6 +117,7 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 
+(global-tab-line-mode)
 (global-hl-line-mode 1)
 
 (global-display-line-numbers-mode 1)
