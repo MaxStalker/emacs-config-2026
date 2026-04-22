@@ -110,6 +110,31 @@
 	 ("C-S-g" . mc/mark-all-like-this)
 	 ("C-S-c" . mc/edit-lines)))
 
+(use-package nerd-icons
+  ;; :custom
+  ;; The Nerd Font you want to use in GUI
+  ;; "Symbols Nerd Font Mono" is the default and is recommended
+  ;; but you can use any other Nerd Font if you want
+  ;; (nerd-icons-font-family "Symbols Nerd Font Mono")
+  )
+
+;; DoomLine - with icons!
+;; (use-package doom-modeline
+;;   :ensure t
+;;   :init (doom-modeline-mode 1)
+;;   :config
+;;   (setq doom-modeline-icon t)
+;;   (setq doom-modeline-buffer-modification-icon t)
+;;   ) ;; Ensure icons are toggled on
+
+;; MoodLine - This one is very slick - only essentail stuff is shown
+(use-package mood-line
+  :config
+  (mood-line-mode)
+  :custom
+  (mood-line-glyph-alist mood-line-glyphs-fira-code))
+
+
 ;; Install custom font
 (add-to-list 'default-frame-alist `(font . "Iosevka-18"))
 
@@ -117,11 +142,14 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 
-(global-tab-line-mode)
+(global-tab-line-mode 1)
 (global-hl-line-mode 1)
 
 (global-display-line-numbers-mode 1)
 ;; (global-hl-line-mode 1)
+
+(setq centaur-tabs-style "slant") ; or "slant" or "rounded"
+(setq centaur-tabs-height 24)   ; Adjust height for a cleaner look
 
 
 (setq inhibit-startup-screen t)

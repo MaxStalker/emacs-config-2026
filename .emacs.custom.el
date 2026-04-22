@@ -7,8 +7,9 @@
  '(display-line-numbers-type 'relative)
  '(package-selected-packages
    '(acme-theme add-node-modules-path apheleia brutalist-theme company
-		counsel dracula-theme ivy magit multiple-cursors
-		projectile rainbow-delimiters swiper treesit-auto)))
+		counsel doom-modeline dracula-theme ivy magit
+		mood-line multiple-cursors nerd-icons projectile
+		rainbow-delimiters swiper treesit-auto)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
